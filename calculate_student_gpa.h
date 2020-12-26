@@ -7,8 +7,7 @@
 
 #endif //GPA_CALCULATE_STUDENT_GPA_H
 
-#include "register_subj_name.h"
-#include "register_subj_crts.h"
+#include "register_subj_name_crts.h"
 #include "enter_total_mark.h"
 #include "grade_of_subj.h"
 #include "value_of_subj.h"
@@ -17,8 +16,7 @@
 
 
 void calculate_student_gpa(){
-    register_subj_name();
-    register_subj_crts();
+    register_subj_name_crts();
     enter_total_mark();
     grade_of_subj();
     value_of_subj();
