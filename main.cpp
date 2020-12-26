@@ -2,7 +2,6 @@
 #include<string>
 #include <bits/stdc++.h>
 
-#include "total_score_from_csv.h"
 
 using namespace std;
 
@@ -12,11 +11,18 @@ struct subject{
     double total_mark;
     int crts;
     int num;
-    int choice;
-    double value;
-    double CrSum;
-    double T_sum;
-    double GPA;
+
+    vector <vector<double>> student;
+
+    /*
+     *      Format of vector student
+     *
+     *      Student_ID      Total_Score     Value   GPA
+     *      Student_ID      Total_Score     Value   GPA
+     *      Student_ID      Total_Score     Value   GPA
+     *      Student_ID      Total_Score     Value   GPA
+     */
+
 };
 subject s;
 subject s1;
@@ -35,28 +41,17 @@ subject s9;
 
 int main(){
 
-    while(1){
-        cout<<"\n\n\n\n";
-        cout<<"____________________________________\n";
-        cout<<"*|********************************|*\n";
-        cout<<"*|                                |*\n";
-        cout<<"*|  C++ GPA Processing System     |*\n";
-        cout<<"*|                                |*\n";
-        cout<<"*|________________________________|*\n";
-        cout<<"************************************\n";
-        cout<<"*\n";
-        cout<<"  *\n";
-        cout<<"    Enter 1 To Calculate Your GPA... ";
-        cin>> s.choice;
-        switch(s.choice){
-            case 1:
-                calculate_student_gpa();
-                break;
-            default:
-                cout<<" Please Enter 1 only ";
-                break;
-        }
-    }
+    cout<<"\n\n\n\n";
+    cout<<"____________________________________\n";
+    cout<<"*|********************************|*\n";
+    cout<<"*|                                |*\n";
+    cout<<"*|   C++ GPA Processing System    |*\n";
+    cout<<"*|                                |*\n";
+    cout<<"*|________________________________|*\n";
+    cout<<"************************************\n";
+    cout<<"\n\n\n\n";
+
+    calculate_student_gpa();
 
     return 0;
 }

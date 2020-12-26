@@ -8,16 +8,18 @@
 #endif //GPA_LAST_GPA_H
 
 double last_GPA(){
-//Total sum of all subjects
-    s.T_sum=s1.value+s2.value+s3.value+s4.value+s5.value+s6.value+s7.value+s8.value+s9.value;
+    int tot_crts= s1.crts + s2.crts + s3.crts;
+    for(int i = 0; i<s1.student.size(); i++){
+        cout << "GPA of student " << i << ": " << (s1.student[i][2] + s2.student[i][2] + s3.student[i][2]) / tot_crts << endl;
+    }
 
-//Total credit hours
-    s.CrSum=s1.crts+s2.crts+s3.crts+s4.crts+s5.crts+s6.crts+s7.crts+s8.crts+s9.crts;
 
-//Final result of GPA
-    s.GPA=s.T_sum/s.CrSum;
-    cout<< endl;
-    cout<<"   YOUR GPA = "<<s.GPA;
-    cout<<"\n==================================\n";
-    cout<<"\n\n"<<endl;
+    cout<<endl<<"Here is our vector"<<endl;
+
+    for(int i = 0; i < s1.student.size(); i++){
+        for(int j =0 ; j < s1.student[i].size(); j++){
+            cout << s1.student[i][j] << endl;
+        }
+    }
+
 }

@@ -106,10 +106,7 @@
 		<Unit filename="/home/bunyod_khakimov/CLionProjects/GPA/gpa_calculator_cpp/main.cpp">
 			<Option target="gpa_calculator_cpp"/>
 		</Unit>
-		<Unit filename="/home/bunyod_khakimov/CLionProjects/GPA/gpa_calculator_cpp/register_subj_crts.h">
-			<Option target="gpa_calculator_cpp"/>
-		</Unit>
-		<Unit filename="/home/bunyod_khakimov/CLionProjects/GPA/gpa_calculator_cpp/register_subj_name.h">
+		<Unit filename="/home/bunyod_khakimov/CLionProjects/GPA/gpa_calculator_cpp/register_subj_name_crts.h">
 			<Option target="gpa_calculator_cpp"/>
 		</Unit>
 		<Unit filename="/home/bunyod_khakimov/CLionProjects/GPA/gpa_calculator_cpp/total_score_from_csv.h">
