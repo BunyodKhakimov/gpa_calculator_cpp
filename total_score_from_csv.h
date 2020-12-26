@@ -14,7 +14,7 @@ void total_score_from_csv(){
 
     ifstream myfile;
 
-    myfile.open("../file.txt");
+    myfile.open("../subjects/file.txt");
 
     vector <vector<int>> tokens;
 

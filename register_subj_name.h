@@ -1,6 +1,9 @@
 //
 // Created by bunyod_khakimov on 25/12/2020.
 //
+#include<fstream>
+#include <stdio.h>
+#include <dirent.h>
 
 #ifndef GPA_REGISTER_SUBJ_NAME_H
 #define GPA_REGISTER_SUBJ_NAME_H
@@ -8,44 +11,70 @@
 #endif //GPA_REGISTER_SUBJ_NAME_H
 
 void register_subj_name(){
-    cout<<"\nEnter Number of courses you learned in this semester... ";
-    cin>> s.num;
-    cout<<" \nPlease register all courses you learned one by one below\n"<<endl;
-    cout<< "1) write the first course name correctly... ";
-    cin>> s1.name;
+    int subj_count = 1;
+    string subjects = "", subject = "";
 
-    if(s.num<=9 && s.num>=2){
-        cout<< "2) write the second course name... ";
-        cin>> s2.name; }
+    struct dirent *de;  // Pointer for directory entry
 
-    if(s.num<=9 && s.num>=3){
-        cout<< "3) write the third course name... ";
-        cin>> s3.name; }
+    // opendir() returns a pointer of DIR type.
 
-    if(s.num<=9 && s.num>=4){
-        cout<< "4) write the fourth course name... ";
-        cin>> s4.name; }
+    DIR *dr = opendir("../subjects/");
 
-    if(s.num<=9 && s.num>=5){
-        cout<< "5) write the fifth course name... ";
-        cin>> s5.name; }
+    if (dr == NULL)  // opendir returns NULL if couldn't open directory
+    {
+        cout << "Could not open current directory";
+    }
 
+    // for readdir()
+    while ((de = readdir(dr)) != NULL){
+        subject = de->d_name;
 
-    if(s.num<=9 && s.num>=6){
-        cout<< "6) write the sixth course name... ";
-        cin>> s6.name; }
+        if(subject != "." && subject != ".."){
 
+            if(subj_count == 1){
+                cout<< "1) First course name: " << subject << endl;
+                s1.name = subject; }
 
-    if(s.num<=9 && s.num>=7){
-        cout<< "7) write the seventh course name... ";
-        cin>> s7.name; }
+            if(subj_count == 2){
+                cout<< "2) Second course name: " << subject << endl;
+                s2.name = subject; }
 
-    if(s.num<=9 && s.num>=8){
-        cout<< "8) write the eighth course name... ";
-        cin>> s8.name; }
+            if(subj_count == 3){
+                cout<< "3) Third course name: " << subject << endl;
+                s3.name = subject; }
 
-    if(s.num<=9 && s.num==9){
-        cout<< "9) write the ninth course name... ";
-        cin>> s9.name; }
+            if(subj_count == 4){
+                cout<< "4) Fourth course name: " << subject << endl;
+                s4.name = subject; }
+
+            if(subj_count == 5){
+                cout<< "5) Fifth course name: " << subject << endl;
+                s5.name = subject; }
+
+            if(subj_count == 6){
+                cout<< "6) Sixth course name: " << subject << endl;
+                s6.name = subject; }
+
+            if(subj_count == 7){
+                cout<< "7) Seventh course name: " << subject << endl;
+                s7.name = subject; }
+
+            if(subj_count == 8){
+                cout<< "8) Eighth course name: " << subject << endl;
+                s8.name = subject; }
+
+            if(subj_count == 9){
+                cout<< "9) Nineth course name: " << subject << endl;
+                s9.name = subject; }
+
+            subj_count++;
+        }
+
+        subject="";
+    }
+
+    closedir(dr);
+
+    cout << "\nNumber of courses you entered as file: " << subj_count-1 << endl;
 
 }
