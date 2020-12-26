@@ -12,7 +12,7 @@
 
 // Open subjects folder ond get file names as subject names and ask user to enter credits for each
 
-void register_subj_name(){
+void register_subj_name_crts(){
 
     int subj_count = 1;
     string subjects = "", subject = "";
